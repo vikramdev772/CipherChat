@@ -1,0 +1,246 @@
+.terminal-loader {
+    border: 0.1em solid #333;
+    background-color: #1a1a1a;
+    color: #0f0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1em;
+    padding: 1.5em 1em;
+    width: 90%; /* Adjust width for mobile view */
+    max-width: 400px; /* Added max-width for larger screens */
+    margin: 100px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  @keyframes blinkCursor {
+    50% {
+      border-right-color: transparent;
+    }
+  }
+  
+  @keyframes typeAndDelete {
+    0%,
+    10% {
+      width: 0;
+    }
+    45%,
+    55% {
+      width: 6.2em;
+    } /* adjust width based on content */
+    90%,
+    100% {
+      width: 0;
+    }
+  }
+  
+  .terminal-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 0 0.4em;
+    box-sizing: border-box;
+  }
+  
+  .terminal-title {
+    float: left;
+    line-height: 1.5em;
+    color: #208fe9;
+    font-weight: 900;
+    font-size: 1.5rem;
+  }
+  
+  .text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.2em solid rgb(16, 227, 16); /* Cursor */
+    animation: typeAndDelete 4s steps(11) infinite,
+      blinkCursor 0.5s step-end infinite alternate;
+    margin-top: 1.5em;
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  
+  .chat-container {
+    width: 60%;
+    margin: 50px auto;
+    border: 2px solid #0bf131;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 20px;
+    background-color: black;
+    color: #0bf131;
+  }
+  
+  .buttonscontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .bookmarkBtn {
+    width: 100px;
+    height: 40px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.349);
+    background-color: rgb(12, 12, 12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+  }
+  
+  .IconContainer {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to bottom, rgb(87, 148, 212), rgb(8, 129, 242));
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+    transition-duration: 0.3s;
+  }
+  
+  .icon {
+    border-radius: 1px;
+  }
+  
+  .save {
+    height: 100%;
+    width: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 1;
+    transition-duration: 0.3s;
+    font-size: 1.04em;
+  }
+  
+  .bookmarkBtn:hover .IconContainer {
+    width: 100px;
+    transition-duration: 0.3s;
+  }
+  
+  .bookmarkBtn:hover .text {
+    transform: translate(10px);
+    width: 0px;
+    font-size: 0px;
+    transition-duration: 0.5s;
+  }
+  
+  .bookmarkBtn:active {
+    transform: scale(0.95);
+    transition-duration: 0.3s;
+  }
+  
+  @media (min-width: 601px) {
+    .terminal-loader {
+      max-width: 1200px;
+      margin: 0px;
+      width: 800px;
+      height: 790px;
+    }
+  
+    .chat-container {
+      width: 100%;
+      min-height: 200px;
+      margin: 50px auto;
+      border: 1.5px solid rgb(38, 230, 50);
+      font-size: 1rem;
+    }
+    .chat-container:hover{
+      box-shadow:  0px 0px 10px rgb(9, 9, 9),0px 0px   15px rgb(11, 11, 11);
+      border: #0bf131;
+  
+    }
+    .terminal-loader{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+  }
+  
+  .terminal-loader{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  @media (max-width: 767px) {
+    .chat-container {
+      width: 100%;
+      min-height: 300px;
+      margin: 50px auto;
+      border: 2px solid #0bf131;
+      border-radius: 5px;
+      overflow: hidden;
+      padding: 20px;
+      background-color: black;
+      color: #0bf131;
+  
+    }
+  
+  }
+
+
+
+  .refresh-button {
+    color: white;
+    background-color: #222;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+  }
+  
+  .refresh-button:hover {
+    background-color: #333;
+  }
+  
+  .refresh-button svg {
+    display: inline;
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-right: 0.75rem;
+    color: white;
+  }
+  
+  .refresh-button:focus svg {
+    animation: spin_357 0.5s linear;
+  }
+  
+  @keyframes spin_357 {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
